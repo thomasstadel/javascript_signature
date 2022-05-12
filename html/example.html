@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript signature example</title>
+</head>
+<body>
+
+<h1>Javascript signature example</h1>
+
+<div id="Signature" style="width: 400px; height: 200px; background: #eee; border: 1px solid #ccc;"></div>
+    
+<div>
+    <button type="button" onclick="sign.clear();">Clear signature</button>
+    <button type="button" onclick="getCroppedImage()">Get cropped image</button>
+    <button type="button" onclick="getImage()">Get image</button>
+</div>
+
+<img id="SignatureImage" style="border: 1px solid #ccc;">
+
+<script src="stadel_signature.js"></script>
+<script>
+    var sign = new StadelSignature('#Signature');
+    sign.callbackSigned = () => {
+        alert('Thank you for signing');
+    }
+
+    function getCroppedImage() {
+        document.querySelector('#SignatureImage').src = sign.getCroppedPNG() ?? '';
+    }
+
+    function getImage() {
+        document.querySelector('#SignatureImage').src = sign.getPNG();
+    }
+</script>
+    
+</body>
+</html>
