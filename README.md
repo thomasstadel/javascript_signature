@@ -2,7 +2,7 @@
 
 This is a simple javascript script for accepting signatures.
 
-Demo: [Link](http://thomasstadel.dk/signature/)
+[Click here for demo](http://thomasstadel.dk/signature/)
 
 ## How to use
 
